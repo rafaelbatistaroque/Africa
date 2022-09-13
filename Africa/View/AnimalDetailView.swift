@@ -16,7 +16,8 @@ struct AnimalDetailView: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 8)
                     .foregroundColor(.primary)
-                    .background(Color.accentColor
+                    .background(
+                        Color.accentColor
                         .frame(height: 6)
                         .offset(y: 24))
 
@@ -31,6 +32,30 @@ struct AnimalDetailView: View {
 
                     InsetGalleryView(animal: animal)
                 }
+                .padding(.horizontal)
+
+                Group {
+                    HeadingView(headingImage: "info.circle", headingText: "All about \(animal.name)")
+
+                    Text(animal.description)
+                        .multilineTextAlignment(.leading)
+                        .layoutPriority(1)
+                }
+                .padding(.horizontal)
+
+                Group {
+                    HeadingView(headingImage: "map", headingText: "National Parks")
+
+                    InsetMapView()
+                }
+                .padding(.horizontal)
+
+                Group {
+                    HeadingView(headingImage: "books.vertical", headingText: "Learn more")
+
+                    ExternalWebLinkView(animal: animal)
+                }
+                .padding(.horizontal)
             }
         }
         .navigationTitle("Learn about \(animal.name)")
