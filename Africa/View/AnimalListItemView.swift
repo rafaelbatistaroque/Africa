@@ -24,7 +24,6 @@ struct AnimalListItemView: View {
                     .padding(.trailing, 8)
             }
         }
-        .listRowBackground(Color.clear)
     }
 }
 
