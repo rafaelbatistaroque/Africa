@@ -33,7 +33,7 @@ struct MapView: View {
                 Image("compass")
                     .resizable()
                     .scaledToFit()
-                .frame(width: 48, height: 48, alignment: .center)
+                    .frame(width: 48, height: 48, alignment: .center)
 
                 VStack(alignment: .leading, spacing: 3) {
                     HStack {
@@ -63,8 +63,8 @@ struct MapView: View {
             }
             .padding(.vertical, 12)
             .padding(.horizontal, 16)
-            .background(Color
-                .black.cornerRadius(8)
+            .background(Color.black
+                .cornerRadius(8)
                 .opacity(0.6)
             )
             .padding(),
